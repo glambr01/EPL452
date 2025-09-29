@@ -1,0 +1,282 @@
+glambr01@node1:~/hw1/Linux$ sudo ./mlc --latency_matrix
+Intel(R) Memory Latency Checker - v3.11b
+Command line parameters: --latency_matrix 
+
+Using buffer size of 200.000MiB
+*** Unable to modify prefetchers (try executing 'modprobe msr')
+*** So, enabling random access for latency measurements
+Measuring idle latencies for random access (in ns)...
+		Numa node
+Numa node	     0	
+       0	  90.5	
+
+Intel(R) Memory Latency Checker - v3.11b
+Command line parameters: --bandwidth_matrix 
+
+Using buffer size of 100.000MiB/thread for reads and an additional 100.000MiB/thread for writes
+*** Unable to modify prefetchers (try executing 'modprobe msr')
+*** So, enabling random access for latency measurements
+Measuring Memory Bandwidths between nodes within system 
+Bandwidths are in MB/sec (1 MB/sec = 1,000,000 Bytes/sec)
+Using all the threads from each core if Hyper-threading is enabled
+Using Read-only traffic type
+		Numa node
+Numa node	     0	
+       0	34362.4	
+
+4 KiB <<< /tmp/ (ext3 /dev/nvme0n1p3 62.4 GiB): request=1 time=113.4 us (warmup)
+4 KiB <<< /tmp/ (ext3 /dev/nvme0n1p3 62.4 GiB): request=2 time=147.9 us
+4 KiB <<< /tmp/ (ext3 /dev/nvme0n1p3 62.4 GiB): request=3 time=159.7 us
+4 KiB <<< /tmp/ (ext3 /dev/nvme0n1p3 62.4 GiB): request=4 time=162.3 us
+4 KiB <<< /tmp/ (ext3 /dev/nvme0n1p3 62.4 GiB): request=5 time=157.2 us
+4 KiB <<< /tmp/ (ext3 /dev/nvme0n1p3 62.4 GiB): request=6 time=154.1 us
+4 KiB <<< /tmp/ (ext3 /dev/nvme0n1p3 62.4 GiB): request=7 time=151.6 us
+4 KiB <<< /tmp/ (ext3 /dev/nvme0n1p3 62.4 GiB): request=8 time=155.4 us
+4 KiB <<< /tmp/ (ext3 /dev/nvme0n1p3 62.4 GiB): request=9 time=147.8 us (fast)
+4 KiB <<< /tmp/ (ext3 /dev/nvme0n1p3 62.4 GiB): request=10 time=155.0 us
+4 KiB <<< /tmp/ (ext3 /dev/nvme0n1p3 62.4 GiB): request=11 time=116.6 us (fast)
+4 KiB <<< /tmp/ (ext3 /dev/nvme0n1p3 62.4 GiB): request=12 time=116.6 us (fast)
+4 KiB <<< /tmp/ (ext3 /dev/nvme0n1p3 62.4 GiB): request=13 time=156.5 us
+4 KiB <<< /tmp/ (ext3 /dev/nvme0n1p3 62.4 GiB): request=14 time=148.4 us
+4 KiB <<< /tmp/ (ext3 /dev/nvme0n1p3 62.4 GiB): request=15 time=154.2 us
+4 KiB <<< /tmp/ (ext3 /dev/nvme0n1p3 62.4 GiB): request=16 time=113.9 us (fast)
+4 KiB <<< /tmp/ (ext3 /dev/nvme0n1p3 62.4 GiB): request=17 time=150.4 us
+4 KiB <<< /tmp/ (ext3 /dev/nvme0n1p3 62.4 GiB): request=18 time=150.2 us
+4 KiB <<< /tmp/ (ext3 /dev/nvme0n1p3 62.4 GiB): request=19 time=148.9 us
+4 KiB <<< /tmp/ (ext3 /dev/nvme0n1p3 62.4 GiB): request=20 time=156.1 us
+
+--- /tmp/ (ext3 /dev/nvme0n1p3 62.4 GiB) ioping statistics ---
+19 requests completed in 2.80 ms, 76 KiB read, 6.78 k iops, 26.5 MiB/s
+generated 20 requests in 19.0 s, 80 KiB, 1 iops, 4.21 KiB/s
+min/avg/max/mdev = 113.9 us / 147.5 us / 162.3 us / 14.3 us
+
+fiotest: (g=0): rw=read, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=64
+fio-3.28
+Starting 1 process
+fiotest: Laying out IO file (1 file / 1024MiB)
+Jobs: 1 (f=1)
+fiotest: (groupid=0, jobs=1): err= 0: pid=7845: Mon Sep 29 13:29:38 2025
+  read: IOPS=152k, BW=596MiB/s (625MB/s)(1024MiB/1719msec)
+   bw (  KiB/s): min=509272, max=715208, per=95.97%, avg=585432.00, stdev=112953.16, samples=3
+   iops        : min=127318, max=178802, avg=146358.00, stdev=28238.29, samples=3
+  cpu          : usr=31.37%, sys=68.63%, ctx=5, majf=0, minf=72
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=0.1%, 32=0.1%, >=64=100.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.1%, >=64=0.0%
+     issued rwts: total=262144,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=64
+
+Run status group 0 (all jobs):
+   READ: bw=596MiB/s (625MB/s), 596MiB/s-596MiB/s (625MB/s-625MB/s), io=1024MiB (1074MB), run=1719-1719msec
+
+Disk stats (read/write):
+  nvme0n1: ios=248839/0, merge=0/0, ticks=3001/0, in_queue=3001, util=94.35%
+
+
+NVME Identify Controller:
+vid       : 0x1179
+ssvid     : 0x1179
+sn        :         563S1074TUFV
+mn        : THNSN5256GPU7 TOSHIBA                   
+fr        : 57GA4103
+rab       : 1
+ieee      : 00080d
+cmic      : 0
+mdts      : 0
+cntlid    : 0
+ver       : 0
+rtd3r     : 0
+rtd3e     : 0
+oaes      : 0
+ctratt    : 0
+rrls      : 0
+cntrltype : 0
+fguid     : 00000000-0000-0000-0000-000000000000
+crdt1     : 0
+crdt2     : 0
+crdt3     : 0
+nvmsr     : 0
+vwci      : 0
+mec       : 0
+oacs      : 0x7
+acl       : 3
+aerl      : 3
+frmw      : 0x2
+lpa       : 0
+elpe      : 127
+npss      : 5
+avscc     : 0
+apsta     : 0x1
+wctemp    : 351
+cctemp    : 355
+mtfa      : 0
+hmpre     : 0
+hmmin     : 0
+tnvmcap   : 0
+unvmcap   : 0
+rpmbs     : 0
+edstt     : 0
+dsto      : 0
+fwug      : 0
+kas       : 0
+hctma     : 0
+mntmt     : 0
+mxtmt     : 0
+sanicap   : 0
+hmminds   : 0
+hmmaxd    : 0
+nsetidmax : 0
+endgidmax : 0
+anatt     : 0
+anacap    : 0
+anagrpmax : 0
+nanagrpid : 0
+pels      : 0
+domainid  : 0
+megcap    : 0
+sqes      : 0x66
+cqes      : 0x44
+maxcmd    : 0
+nn        : 1
+oncs      : 0xe
+fuses     : 0
+fna       : 0
+vwc       : 0x1
+awun      : 255
+awupf     : 0
+icsvscc     : 0
+nwpc      : 0
+acwu      : 0
+ocfs      : 0
+sgls      : 0
+mnan      : 0
+maxdna    : 0
+maxcna    : 0
+subnqn    : 
+ioccsz    : 0
+iorcsz    : 0
+icdoff    : 0
+fcatt     : 0
+msdbd     : 0
+ofcs      : 0
+ps    0 : mp:6.00W operational enlat:0 exlat:0 rrt:0 rrl:0
+          rwt:0 rwl:0 idle_power:- active_power:-
+ps    1 : mp:2.40W operational enlat:0 exlat:0 rrt:1 rrl:1
+          rwt:1 rwl:1 idle_power:- active_power:-
+ps    2 : mp:1.90W operational enlat:0 exlat:0 rrt:2 rrl:2
+          rwt:2 rwl:2 idle_power:- active_power:-
+ps    3 : mp:0.1600W non-operational enlat:1000 exlat:1000 rrt:3 rrl:3
+          rwt:3 rwl:3 idle_power:- active_power:-
+ps    4 : mp:0.0120W non-operational enlat:5000 exlat:35000 rrt:4 rrl:4
+          rwt:4 rwl:4 idle_power:- active_power:-
+ps    5 : mp:0.0060W non-operational enlat:100000 exlat:110000 rrt:5 rrl:5
+          rwt:5 rwl:5 idle_power:- active_power:-
+
+PING node0-link-1 (10.10.1.1) 56(84) bytes of data.
+64 bytes from node0-link-1 (10.10.1.1): icmp_seq=1 ttl=64 time=0.394 ms
+64 bytes from node0-link-1 (10.10.1.1): icmp_seq=2 ttl=64 time=0.179 ms
+64 bytes from node0-link-1 (10.10.1.1): icmp_seq=3 ttl=64 time=0.162 ms
+64 bytes from node0-link-1 (10.10.1.1): icmp_seq=4 ttl=64 time=0.172 ms
+64 bytes from node0-link-1 (10.10.1.1): icmp_seq=5 ttl=64 time=0.173 ms
+64 bytes from node0-link-1 (10.10.1.1): icmp_seq=6 ttl=64 time=0.166 ms
+64 bytes from node0-link-1 (10.10.1.1): icmp_seq=7 ttl=64 time=0.174 ms
+64 bytes from node0-link-1 (10.10.1.1): icmp_seq=8 ttl=64 time=0.162 ms
+64 bytes from node0-link-1 (10.10.1.1): icmp_seq=9 ttl=64 time=0.168 ms
+64 bytes from node0-link-1 (10.10.1.1): icmp_seq=10 ttl=64 time=0.167 ms
+64 bytes from node0-link-1 (10.10.1.1): icmp_seq=11 ttl=64 time=0.174 ms
+64 bytes from node0-link-1 (10.10.1.1): icmp_seq=12 ttl=64 time=0.160 ms
+64 bytes from node0-link-1 (10.10.1.1): icmp_seq=13 ttl=64 time=0.167 ms
+64 bytes from node0-link-1 (10.10.1.1): icmp_seq=14 ttl=64 time=0.172 ms
+64 bytes from node0-link-1 (10.10.1.1): icmp_seq=15 ttl=64 time=0.166 ms
+64 bytes from node0-link-1 (10.10.1.1): icmp_seq=16 ttl=64 time=0.171 ms
+64 bytes from node0-link-1 (10.10.1.1): icmp_seq=17 ttl=64 time=0.168 ms
+64 bytes from node0-link-1 (10.10.1.1): icmp_seq=18 ttl=64 time=0.168 ms
+64 bytes from node0-link-1 (10.10.1.1): icmp_seq=19 ttl=64 time=0.161 ms
+64 bytes from node0-link-1 (10.10.1.1): icmp_seq=20 ttl=64 time=0.164 ms
+
+--- node0-link-1 ping statistics ---
+20 packets transmitted, 20 received, 0% packet loss, time 19455ms
+rtt min/avg/max/mdev = 0.160/0.179/0.394/0.049 ms
+
+------------------------------------------------------------
+Server listening on UDP port 5001
+UDP buffer size:  416 KByte (WARNING: requested 4.00 MByte)
+------------------------------------------------------------
+[  1] local 10.10.1.2 port 5001 connected with 10.10.1.1 port 50786
+[ ID] Interval       Transfer     Bandwidth        Jitter   Lost/Total Datagrams
+[  1] 0.0000-1.0000 sec  1.19 MBytes  10.0 Mbits/sec   0.010 ms 0/852 (0%)
+[  1] 1.0000-2.0000 sec  1.19 MBytes  10.0 Mbits/sec   0.021 ms 0/850 (0%)
+[  1] 2.0000-3.0000 sec  1.19 MBytes  10.0 Mbits/sec   0.013 ms 0/850 (0%)
+[  1] 3.0000-4.0000 sec  1.19 MBytes  10.0 Mbits/sec   0.009 ms 0/851 (0%)
+[  1] 4.0000-5.0000 sec  1.19 MBytes  10.0 Mbits/sec   0.008 ms 0/850 (0%)
+[  1] 5.0000-6.0000 sec  1.19 MBytes  10.0 Mbits/sec   0.010 ms 0/850 (0%)
+[  1] 6.0000-7.0000 sec  1.19 MBytes  10.0 Mbits/sec   0.010 ms 0/851 (0%)
+[  1] 7.0000-8.0000 sec  1.19 MBytes  10.0 Mbits/sec   0.013 ms 0/850 (0%)
+[  1] 8.0000-9.0000 sec  1.19 MBytes  10.0 Mbits/sec   0.024 ms 0/850 (0%)
+[  1] 9.0000-10.0000 sec  1.19 MBytes  10.0 Mbits/sec   0.013 ms 0/851 (0%)
+[  1] 0.0000-10.0020 sec  11.9 MBytes  10.0 Mbits/sec   0.013 ms 0/8507 (0%)
+[  2] local 10.10.1.2 port 5001 connected with 10.10.1.1 port 33826
+[ ID] Interval       Transfer     Bandwidth        Jitter   Lost/Total Datagrams
+[  2] 0.0000-1.0000 sec  5.96 MBytes  50.0 Mbits/sec   0.008 ms 0/4254 (0%)
+[  2] 1.0000-2.0000 sec  5.96 MBytes  50.0 Mbits/sec   0.005 ms 0/4251 (0%)
+[  2] 2.0000-3.0000 sec  5.96 MBytes  50.0 Mbits/sec   0.013 ms 0/4252 (0%)
+[  2] 3.0000-4.0000 sec  5.96 MBytes  50.0 Mbits/sec   0.014 ms 0/4252 (0%)
+[  2] 4.0000-5.0000 sec  5.96 MBytes  50.0 Mbits/sec   0.014 ms 0/4251 (0%)
+[  2] 5.0000-6.0000 sec  5.96 MBytes  50.0 Mbits/sec   0.013 ms 0/4252 (0%)
+[  2] 6.0000-7.0000 sec  5.96 MBytes  50.0 Mbits/sec   0.013 ms 0/4252 (0%)
+[  2] 7.0000-8.0000 sec  5.96 MBytes  50.0 Mbits/sec   0.004 ms 0/4251 (0%)
+[  2] 8.0000-9.0000 sec  5.96 MBytes  50.0 Mbits/sec   0.005 ms 0/4252 (0%)
+[  2] 9.0000-10.0000 sec  5.96 MBytes  50.0 Mbits/sec   0.005 ms 0/4252 (0%)
+[  2] 0.0000-10.0002 sec  59.6 MBytes  50.0 Mbits/sec   0.005 ms 0/42520 (0%)
+[  3] local 10.10.1.2 port 5001 connected with 10.10.1.1 port 37157
+[ ID] Interval       Transfer     Bandwidth        Jitter   Lost/Total Datagrams
+[  3] 0.0000-1.0000 sec  11.9 MBytes   100 Mbits/sec   0.010 ms 0/8506 (0%)
+[  3] 1.0000-2.0000 sec  11.9 MBytes   100 Mbits/sec   0.001 ms 0/8503 (0%)
+[  3] 2.0000-3.0000 sec  11.9 MBytes   100 Mbits/sec   0.012 ms 0/8504 (0%)
+[  3] 3.0000-4.0000 sec  11.9 MBytes   100 Mbits/sec   0.011 ms 0/8503 (0%)
+[  3] 4.0000-5.0000 sec  11.9 MBytes   100 Mbits/sec   0.011 ms 0/8503 (0%)
+[  3] 5.0000-6.0000 sec  11.9 MBytes   100 Mbits/sec   0.013 ms 0/8503 (0%)
+[  3] 6.0000-7.0000 sec  11.9 MBytes   100 Mbits/sec   0.010 ms 0/8505 (0%)
+[  3] 7.0000-8.0000 sec  11.9 MBytes   100 Mbits/sec   0.011 ms 0/8503 (0%)
+[  3] 8.0000-9.0000 sec  11.9 MBytes   100 Mbits/sec   0.012 ms 0/8502 (0%)
+[  3] 9.0000-10.0000 sec  11.9 MBytes   100 Mbits/sec   0.002 ms 0/8505 (0%)
+[  3] 0.0000-10.0000 sec   119 MBytes   100 Mbits/sec   0.002 ms 0/85037 (0%)
+[  4] local 10.10.1.2 port 5001 connected with 10.10.1.1 port 43071
+[ ID] Interval       Transfer     Bandwidth        Jitter   Lost/Total Datagrams
+[  4] 0.0000-1.0000 sec   119 MBytes  1.00 Gbits/sec   0.003 ms 1/85055 (0.0012%)
+[  4] 1.0000-2.0000 sec   119 MBytes  1000 Mbits/sec   0.004 ms 0/85033 (0%)
+[  4] 2.0000-3.0000 sec   119 MBytes  1000 Mbits/sec   0.003 ms 0/85026 (0%)
+[  4] 3.0000-4.0000 sec   119 MBytes  1.00 Gbits/sec   0.003 ms 0/85038 (0%)
+[  4] 4.0000-5.0000 sec   119 MBytes  1000 Mbits/sec   0.003 ms 0/85033 (0%)
+[  4] 5.0000-6.0000 sec   119 MBytes  1000 Mbits/sec   0.002 ms 0/85026 (0%)
+[  4] 6.0000-7.0000 sec   119 MBytes  1000 Mbits/sec   0.002 ms 0/85034 (0%)
+[  4] 7.0000-8.0000 sec   119 MBytes  1.00 Gbits/sec   0.003 ms 0/85042 (0%)
+[  4] 8.0000-9.0000 sec   119 MBytes  1000 Mbits/sec   0.003 ms 0/85031 (0%)
+[  4] 9.0000-10.0000 sec   119 MBytes  1000 Mbits/sec   0.004 ms 0/85026 (0%)
+[  4] 0.0000-10.0000 sec  1.16 GBytes  1.00 Gbits/sec   0.004 ms 1/850346 (0.00012%)
+[  5] local 10.10.1.2 port 5001 connected with 10.10.1.1 port 55715
+[ ID] Interval       Transfer     Bandwidth        Jitter   Lost/Total Datagrams
+[  5] 0.0000-1.0000 sec   356 MBytes  2.99 Gbits/sec   0.002 ms 1264/255163 (0.5%)
+[  5] 1.0000-2.0000 sec   358 MBytes  3.00 Gbits/sec   0.004 ms 48/255100 (0.019%)
+[  5] 2.0000-3.0000 sec   358 MBytes  3.00 Gbits/sec   0.003 ms 0/255018 (0%)
+[  5] 3.0000-4.0000 sec   358 MBytes  3.00 Gbits/sec   0.003 ms 0/255119 (0%)
+[  5] 4.0000-5.0000 sec   358 MBytes  3.00 Gbits/sec   0.003 ms 0/255141 (0%)
+[  5] 5.0000-6.0000 sec   358 MBytes  3.00 Gbits/sec   0.004 ms 0/255125 (0%)
+[  5] 6.0000-7.0000 sec   358 MBytes  3.00 Gbits/sec   0.004 ms 0/255050 (0%)
+[  5] 7.0000-8.0000 sec   358 MBytes  3.00 Gbits/sec   0.004 ms 0/255144 (0%)
+[  5] 8.0000-9.0000 sec   358 MBytes  3.00 Gbits/sec   0.005 ms 0/255106 (0%)
+[  5] 9.0000-9.9999 sec   358 MBytes  3.00 Gbits/sec   0.003 ms 0/255065 (0%)
+[  5] 0.0000-9.9999 sec  3.49 GBytes  3.00 Gbits/sec   0.003 ms 1312/2551031 (0.051%)
+[  6] local 10.10.1.2 port 5001 connected with 10.10.1.1 port 45609
+[ ID] Interval       Transfer     Bandwidth        Jitter   Lost/Total Datagrams
+[  6] 0.0000-1.0000 sec   391 MBytes  3.28 Gbits/sec   0.002 ms 856/279659 (0.31%)
+[  6] 1.0000-2.0000 sec   494 MBytes  4.14 Gbits/sec   0.002 ms 0/352111 (0%)
+[  6] 2.0000-3.0000 sec   496 MBytes  4.16 Gbits/sec   0.003 ms 0/353812 (0%)
+[  6] 3.0000-4.0000 sec   496 MBytes  4.16 Gbits/sec   0.002 ms 0/353890 (0%)
+[  6] 4.0000-5.0000 sec   496 MBytes  4.16 Gbits/sec   0.001 ms 0/353971 (0%)
+[  6] 5.0000-6.0000 sec   496 MBytes  4.16 Gbits/sec   0.003 ms 0/354085 (0%)
+[  6] 6.0000-7.0000 sec   496 MBytes  4.16 Gbits/sec   0.003 ms 0/353986 (0%)
+[  6] 7.0000-8.0000 sec   496 MBytes  4.16 Gbits/sec   0.003 ms 0/354140 (0%)
+[  6] 8.0000-9.0000 sec   488 MBytes  4.09 Gbits/sec   0.003 ms 0/347922 (0%)
+[  6] 9.0000-9.9998 sec   486 MBytes  4.08 Gbits/sec   0.003 ms 0/346920 (0%)
+[  6] 0.0000-9.9998 sec  4.72 GBytes  4.06 Gbits/sec   0.003 ms 856/3450496 (0.025%)
